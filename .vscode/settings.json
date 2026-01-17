@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "vWmRosDk5swoh2ddK2cNqwQPeD6ol3pk@dpg-d5gtkuur433s73bc5fl0-a.oregon-postgres.render.com",
+            "driver": "PostgreSQL",
+            "name": "Render DB",
+            "database": "cse340_lvwh",
+            "username": "cse340_user",
+            "password": "vWmRosDk5swoh2ddK2cNqwQPeD6ol3pk",
+            "connectString": "postgresql://cse340_user:vWmRosDk5swoh2ddK2cNqwQPeD6ol3pk@dpg-d5gtkuur433s73bc5fl0-a.oregon-postgres.render.com/cse340_lvwh"
+        }
+    ]
+}
