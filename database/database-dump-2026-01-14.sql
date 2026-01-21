@@ -1,8 +1,8 @@
 CREATE TYPE PUBLIC.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
  
-ALTER TYPE PUBLIC.account_type
-    OWNER TO postgres;
+-- ALTER TYPE PUBLIC.account_type
+-- OWNER TO postgres;
  
 
 -- Table structure for table 'classification'
