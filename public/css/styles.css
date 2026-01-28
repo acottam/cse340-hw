@@ -22,7 +22,7 @@
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
 }
 
 body {
@@ -47,6 +47,88 @@ h5,
 h6 {
   font-family: "Raleway", "Open Sans", Arial, sans-serif;
   margin: 0 0 .5rem 0;
+}
+
+/* ----- Login Form Styling ---- */
+#login-form {
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  background: var(--cse-motors-blue);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+}
+
+#login-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#login-form legend {
+  display: none;
+}
+
+#login-form label {
+  display: block;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  background: white;
+}
+
+#login-form input[type="email"]:focus,
+#login-form input[type="password"]:focus {
+  outline: 2px solid var(--cse-motors-green);
+  outline-offset: 2px;
+}
+
+#login-button {
+  display: block;
+  width: 200px;
+  margin: 1.5rem auto;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #666;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#login-button:hover {
+  background: #f0f0f0;
+}
+
+#login-form p {
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+#login-form a {
+  color: white;
+  text-decoration: underline;
+}
+
+#login-form a:hover {
+  text-decoration: none;
 }
 
 p {

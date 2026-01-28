@@ -1,7 +1,7 @@
-const invModel = require("../models/inventory-model")
-const utilities = require("../utilities/")
+const invModel = require("../models/inventory-model");
+const utilities = require("../utilities/");
 
-const invCont = {}
+const invCont = {};
 
 /* ***************************
  *  Build inventory by classification view
@@ -39,14 +39,14 @@ invCont.buildByInventoryId = async function (req, res, next) {
  *  Trigger intentional error
  * ************************** */
 invCont.triggerError = async function (req, res, next) {
-  throw new Error("This is an intentional 500 type error for testing purposes.")
+  throw new Error("This is an intentional 500 type error for testing purposes.");
 }
 
 /* ***************************
  *  Trigger footer-based error
  * ************************** */
 invCont.triggerFooterError = async function (req, res, next) {
-  throw new Error("This is a footer-based intentional error for testing purposes.")
+  throw new Error("This is a footer-based intentional error for testing purposes.");
 }
 
-module.exports = invCont
+module.exports = invCont;

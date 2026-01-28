@@ -16,4 +16,5 @@ router.get("/trigger-error", utilities.handleErrors(invController.triggerError))
 // Route to trigger footer-based error
 router.get("/footer-error", utilities.handleErrors(invController.triggerFooterError));
 
+// Export the router
 module.exports = router;
