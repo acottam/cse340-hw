@@ -20,6 +20,9 @@ const pool = require('./database/');
 /* ***********************
  * Middleware
  * ************************/
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.use(session({
   store: new (require('connect-pg-simple')(session))({
     createTableIfMissing: true,

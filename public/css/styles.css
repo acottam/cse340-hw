@@ -49,6 +49,57 @@ h6 {
   margin: 0 0 .5rem 0;
 }
 
+/* ----- Flash Messages ---- */
+#messages {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  justify-self: center;
+}
+
+#messages ul {
+  background-color: var(--cse-motors-green);
+  color: white;
+  border: 1px solid #1e5e24;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+}
+
+#messages ul.error {
+  background-color: #dc3545;
+  border: 1px solid #b02a37;
+}
+
+#messages li {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Validation Error Messages ---- */
+main > ul.notice {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  justify-self: center;
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #b02a37;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  list-style: none;
+}
+
+main > ul.notice li {
+  margin: 0;
+  padding: 0;
+}
+
 /* ----- Login Form Styling ---- */
 #login-form {
   max-width: 600px;
@@ -58,6 +109,8 @@ h6 {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: var(--shadow-2);
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 #login-form fieldset {
@@ -129,6 +182,115 @@ h6 {
 
 #login-form a:hover {
   text-decoration: none;
+}
+
+/* ----- Registration Form Styling ---- */
+#register-form {
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  background: var(--cse-motors-blue);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.validPassword {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border-left: 3px solid white;
+}
+
+#register-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#register-form legend {
+  display: none;
+}
+
+#register-form label {
+  display: block;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  background: white;
+}
+
+#register-form input[type="text"]:focus,
+#register-form input[type="email"]:focus,
+#register-form input[type="password"]:focus {
+  outline: 2px solid var(--cse-motors-green);
+  outline-offset: 2px;
+}
+
+#register-button {
+  display: block;
+  width: 200px;
+  margin: 1.5rem auto;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #666;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#register-button:hover {
+  background: #f0f0f0;
+}
+
+.password-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: stretch;
+}
+
+.password-container input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+#pswdBtn {
+  padding: 0.75rem 1rem;
+  background: var(--cse-motors-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 50px;
+  max-height: 45px;
+}
+
+#pswdBtn:hover {
+  background: #1e5e24;
 }
 
 p {

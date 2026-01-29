@@ -9,8 +9,6 @@ async function getClassifications() {
   );
 }
 
-module.exports = { getClassifications };
-
 /* ***************************
  *  Get all inventory items and classification_name by classification_id
  * ************************** */
@@ -47,4 +45,5 @@ async function getInventoryByInventoryId(inventory_id) {
   }
 }
 
+// Export the functions
 module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInventoryId};

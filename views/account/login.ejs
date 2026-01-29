@@ -2,7 +2,7 @@
   <h1><%= title %></h1>
 <% } else {res.redirect('/')} %>
 
-<%# messages() %>
+<%- messages() %>
 
 <form method="POST" action="/account/login" id="login-form">
     <fieldset>
@@ -12,10 +12,10 @@
         <input type="email" name="account_email" id="account_email" required>
 
         <label for="account_password">Password:</label>
-        <input type="password" name="account_password" id="account_password" required>
+        <input type="password" name="account_password" id="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
 
         <button type="submit" id="login-button">Login</button>
     </fieldset>
     <input type="hidden" name="action" value="login">
-    <p>No account? <a href="/account/sign-up">Sign-up</a></p>
+    <p>No account? <a href="/account/register">Sign-up</a></p>
 </form>
