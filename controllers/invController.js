@@ -66,7 +66,7 @@ async function addClassification(req, res) {
       "notice",
       `Classification "${classification_name}" added successfully.`
     );
-    res.redirect("/inv/add-classification");
+    res.redirect("/inv/management");
   } else {
     req.flash(
       "notice",
