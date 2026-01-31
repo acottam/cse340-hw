@@ -1,0 +1,26 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {res.redirect('/')} %>
+
+<%- messages() %>
+
+<div id="client-classification-errors"></div>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<form action="/inv/add-classification" method="POST" id="add-classification-form">
+    <fieldset>
+        <legend>Add Classification</legend>
+        <label for="classification_name">Classification Name:</label>
+        <input type="text" name="classification_name" id="classificationName" pattern="^[A-Z][A-Za-z0-9]*$" minlength="2" value="<%= typeof classification_name !== 'undefined' ? classification_name : '' %>" required>
+        <button type="button" class="toggle-novalidate nv-disable-state" aria-pressed="false">Disable Client Validation (testing only)</button>
+        <button type="submit" id="add-classification-button">Add Classification</button>
+    </fieldset>
+    <input type="hidden" name="action" value="add-classification">
+</form>

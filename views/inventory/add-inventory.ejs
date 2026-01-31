@@ -1,0 +1,55 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {res.redirect('/')} %>
+
+<%- messages() %>
+
+<div id="client-inventory-errors"></div>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<form action="/inv/add-inventory" method="POST" id="add-inventory-form">
+    <fieldset>
+        <legend>Add inventory</legend>
+        <label for="classification_id">Classification:</label>
+        <%- classificationSelect %>
+
+        <label for="inv_make">Name:</label>
+        <input type="text" name="inv_make" id="invMake" value="<%= typeof inv_make !== 'undefined' ? inv_make : '' %>" minlength="2" required>
+
+        <label for="inv_model">Model:</label>
+        <input type="text" name="inv_model" id="invModel" value="<%= typeof inv_model !== 'undefined' ? inv_model : '' %>" minlength="3" required>
+
+        <label for="inv_year">Year:</label>
+        <input type="number" name="inv_year" id="invYear" value="<%= typeof inv_year !== 'undefined' ? inv_year : '' %>" min="1886" max="<%= new Date().getFullYear() + 1 %>" required>
+
+        <label for="inv_description">Description:</label>
+        <textarea name="inv_description" id="invDescription" minlength="15" required><%= typeof inv_description !== 'undefined' ? inv_description : '' %></textarea>
+
+        <label for="inv_image">Image Path <span class="field-note">(i.e., /images/vehicles/no-image.png)</span>:</label>
+        <input type="text" name="inv_image" id="invImage" pattern="^(?!https?:)(?!\\/\\/)(?!data:)(?:\\.{0,2}\\/)?[A-Za-z0-9._-]+(?:\\/[A-Za-z0-9._-]+)+$" value="<%= typeof inv_image !== 'undefined' ? inv_image : '' %>" required>
+        
+        <label for="inv_thumbnail">Thumbnail Path <span class="field-note">(i.e., /images/vehicles/no-image.png)</span>:</label>
+        <input type="text" name="inv_thumbnail" id="invThumbnail" pattern="^(?!https?:)(?!\\/\\/)(?!data:)(?:\\.{0,2}\\/)?[A-Za-z0-9._-]+(?:\\/[A-Za-z0-9._-]+)+$" value="<%= typeof inv_thumbnail !== 'undefined' ? inv_thumbnail : '' %>" required>
+
+        <label for="inv_price">Price:</label>
+        <input type="number" name="inv_price" id="invPrice" step="0.01" min="0" value="<%= typeof inv_price !== 'undefined' ? inv_price : '' %>" required>
+
+        <label for="inv_miles">Miles:</label>
+        <input type="number" name="inv_miles" id="invMiles" min="0" value="<%= typeof inv_miles !== 'undefined' ? inv_miles : '' %>" required>
+
+        <label for="inv_color">Color:</label>
+        <input type="text" name="inv_color" id="invColor" value="<%= typeof inv_color !== 'undefined' ? inv_color : '' %>" minlength="3" required>
+
+        <button type="button" class="toggle-novalidate nv-disable-state" aria-pressed="false">Disable Client Validation (testing only)</button>
+        
+        <button type="submit" id="add-inventory-button">Add inventory</button>
+    </fieldset>
+    <input type="hidden" name="action" value="add-inventory">
+</form>

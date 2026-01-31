@@ -1,0 +1,13 @@
+<%# Unit 3, Activities %>
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<ul>
+  <li><a href="/inv/add-classification" id="add-classification-link">Add Classification</a></li>
+  <li><a href="/inv/add-inventory" id="add-inventory-link">Add Inventory Item</a></li>
+</ul>

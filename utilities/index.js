@@ -26,8 +26,6 @@ Util.getNav = async function (req, res, next) {
   return list;
 };
 
-
-
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
@@ -56,7 +54,9 @@ Util.buildClassificationGrid = async function(data){
     })
     grid += '</ul>'
   } else { 
-    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+    grid = '<div class="no-inventory-message">'
+    grid += '<p>We apologize, but we currently do not have any vehicles available in this category. Please check back soon or explore our other vehicle classifications.</p>'
+    grid += '</div>'
   }
   return grid
 }
@@ -78,6 +78,27 @@ Util.buildVehicleDetailHTML = async function(vehicle){
   html += '</div>'
   html += '</div>'
   return html
+}
+
+/* **************************************
+* Build classification select list
+* ************************************ */
+Util.buildClassificationList = async function (classification_id = null) {
+    let data = await invModel.getClassifications();
+    let classificationList = '<select name="classification_id" id="classificationList" required>';
+    classificationList += "<option value=''>Choose a Classification</option>";
+    data.rows.forEach((row) => {
+      classificationList += '<option value="' + row.classification_id + '"';
+      if (
+        classification_id != null &&
+        row.classification_id == classification_id
+      ) {
+        classificationList += " selected ";
+      }
+      classificationList += ">" + row.classification_name + "</option>";
+    });
+    classificationList += "</select>";
+    return classificationList;
 }
 
 /* ****************************************

@@ -7,4 +7,5 @@ baseController.buildHome = async function (req, res) {
   res.render("index", { title: "Home", nav });
 };
 
+// Export the controller
 module.exports = baseController;
